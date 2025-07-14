@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "id": "1e0c",
+      "name": "Admin",
+      "email": "admin007@admin.com",
+      "password": "admin12345.",
+      "role": "admin"
+    },
+    {
+      "id": "63fc",
+      "name": "Owner",
+      "email": "owner10@owner.com",
+      "password": "elpapadelospollitos123",
+      "role": "admin"
+    }
+  ],
+  "events": [
+    {
+      "id": "101",
+      "name": "JAVA SCRIPT",
+      "date": "2025-08-14",
+      "location": "Universidad de la Costa (CUC)",
+      "capacity": 60,
+      "registeredUsers": []
+    },
+    {
+      "id": "102",
+      "name": "Desarrollo de Software",
+      "date": "2025-08-23",
+      "location": "Riwi",
+      "capacity": 45,
+      "registeredUsers": []
+    }
+  ]
+}
