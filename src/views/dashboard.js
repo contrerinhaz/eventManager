@@ -44,14 +44,15 @@ export async function showDashboard() {
     </section>
   `;
 
+  // Cerrar sesión
   document.getElementById('logoutBtn').addEventListener('click', () => {
     logoutUser();
     window.location.hash = '#/login';
   });
 
-  // Registro a eventos
-  document.querySelectorAll('.register-btn').forEach(btn => {
-    btn.addEventListener('click', async (e) => {
+  // Botón registrar a evento
+  document.querySelectorAll(".register-btn").forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
       const eventId = e.target.dataset.eventId;
       try {
         await registerUserToEvent(eventId, user.id);
@@ -63,7 +64,23 @@ export async function showDashboard() {
     });
   });
 
-  // Eliminar usuarios de eventos (admin)
+  // Botón cancelar registro (usuario)
+  document.querySelectorAll(".unregister-user-btn").forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+      const eventId = e.target.dataset.eventId;
+      if (confirm("¿Seguro que quieres cancelar tu registro?")) {
+        try {
+          await unregisterUserFromEvent(eventId, user.id);
+          alert("Registro cancelado");
+          showDashboard();
+        } catch (err) {
+          alert("Error al cancelar registro");
+        }
+      }
+    });
+  });
+
+  // Botón eliminar usuario de evento (admin)
   document.querySelectorAll('.unregister-btn').forEach(btn => {
     btn.addEventListener('click', async (e) => {
       const eventId = e.target.dataset.eventId;
@@ -75,7 +92,7 @@ export async function showDashboard() {
     });
   });
 
-  // Eliminar usuarios del sistema (admin)
+  // Botón eliminar usuario del sistema (admin)
   document.querySelectorAll('.delete-user').forEach(btn => {
     btn.addEventListener('click', async (e) => {
       const userId = e.target.dataset.userId;
@@ -87,7 +104,7 @@ export async function showDashboard() {
     });
   });
 
-  // Editar usuarios del sistema (admin)
+  // Botón editar usuario del sistema (admin)
   document.querySelectorAll('.edit-user').forEach(btn => {
     btn.addEventListener('click', async (e) => {
       const userId = e.target.dataset.userId;
@@ -129,19 +146,20 @@ function renderEvent(event, user) {
       </div>
     `;
   }
+
+  const userAction = user.role === "user"
+    ? (isRegistered
+        ? `<button class="unregister-user-btn" data-event-id="${event.id}">Cancelar registro</button>`
+        : `<button class="register-btn" data-event-id="${event.id}" ${canRegister ? "" : "disabled"}>Registrarse</button>`)
+    : "";
+
   return `
     <div class="event-card">
       <h3><i>${event.name}</i></h3>
       <p><strong>Fecha:</strong> ${event.date}</p>
       <p><strong>Lugar:</strong> ${event.location}</p>
       <p><strong>Cupos:</strong> ${event.registeredUsers.length} / ${event.capacity}</p>
-      ${
-        user.role === 'user'
-          ? (isRegistered
-              ? `<p class="registered-msg">Ya estás registrado</p>`
-              : `<button class="register-btn" data-event-id="${event.id}" ${canRegister ? '' : 'disabled'}>Registrarse</button>`)
-          : ''
-      }
+      ${userAction}
       ${
         isAdmin()
           ? `

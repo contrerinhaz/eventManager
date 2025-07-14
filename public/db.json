@@ -13,6 +13,13 @@
       "email": "owner10@owner.com",
       "password": "elpapadelospollitos123",
       "role": "admin"
+    },
+    {
+      "id": "800e",
+      "name": "juan",
+      "email": "juanriwi1@gmail.com",
+      "password": "juan123.",
+      "role": "user"
     }
   ],
   "events": [
