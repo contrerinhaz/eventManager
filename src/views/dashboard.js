@@ -31,6 +31,9 @@ export async function showDashboard() {
   }
 
   app.innerHTML = `
+  ${isAdmin() ? `<a href="#/dashboard/events/create" class="create-event-btn">+ Crear nuevo evento</a>` : ""}
+      <div id="events-container">
+      </div>
     <section class="dashboard">
       <div style="display:flex; justify-content:space-between; align-items:center;">
         <h2>Bienvenido, ${user.name}</h2>

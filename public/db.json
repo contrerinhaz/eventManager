@@ -38,6 +38,14 @@
       "location": "Riwi",
       "capacity": 45,
       "registeredUsers": []
+    },
+    {
+      "id": "6d6e",
+      "name": "reunion para comer",
+      "date": "2025-07-24",
+      "location": "en la calle",
+      "capacity": 10,
+      "registeredUsers": []
     }
   ]
 }
