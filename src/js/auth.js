@@ -65,3 +65,8 @@ export function isAdmin() {
   const user = getCurrentUser();
   return user && user.role === "admin";
 }
+
+export function isPath(){
+  const path = window.location.pathname;
+  return path === "/login" || path === "/register" || path === "/";
+}

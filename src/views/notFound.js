@@ -5,7 +5,7 @@ export function showNotFound() {
   const redirectTo = isAuthenticated() ? '#/dashboard' : '#/login';
 
   app.innerHTML = `
-    <section class="not-found">
+    <section class="notFound">
       <h2>404 - Página no encontrada</h2>
       <p>Lo sentimos, la ruta que intentaste acceder no existe o no tienes permiso.</p>
       <a href="${redirectTo}">

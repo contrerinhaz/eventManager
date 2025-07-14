@@ -2,8 +2,8 @@ import { showLanding } from '../views/landing.js';
 import { showLogin } from '../views/login.js';
 import { showRegister } from '../views/register.js';
 import { showDashboard } from '../views/dashboard.js';
-import { showCreatEven } from '../views/creatEven.js';
-import { showEditEven } from '../views/editEven.js';
+import { showCreatEven } from '../views/createEvent.js';
+import { showEditEven } from '../views/editEvent.js';
 import { showNotFound } from '../views/notFound.js';
 import { isAuthenticated, isAdmin } from './auth.js';
 
@@ -17,17 +17,17 @@ const routes = {
     if (isAdmin()) {
       showCreatEven();
     } else {
-      window.location.hash = "#/not-found";
+      window.location.hash = "#/login";
     }
   },
   "#/dashboard/events/edit": () => {
     if (isAdmin()) {
       showEditEven();
     } else {
-      window.location.hash = "#/not-found";
+      window.location.hash = "#/login";
     }
   },
-  "#/not-found": showNotFound
+  "#/404": showNotFound,
 };
 
 // Función principal del enrutador
@@ -51,13 +51,13 @@ export function router() {
   // Rutas públicas accesibles sin autenticación
   const publicRoutes = ["#/", "#/login", "#/register"];
 
-  // Si no está autenticado y quiere acceder a ruta privada → not-found
+  // Si no está autenticado y quiere acceder a ruta privada → notFound
   if (!isAuthenticated() && !publicRoutes.includes(path)) {
-    window.location.hash = "#/not-found";
+    window.location.hash = "#/notFound";
     return;
   }
 
-  // Ejecutar la vista si existe, si no, mostrar not-found
+  // Ejecutar la vista si existe, si no, mostrar notFound
   const render = routes[path];
   if (render) {
     render();

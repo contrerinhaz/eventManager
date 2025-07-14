@@ -9,7 +9,7 @@ export async function showEditEven() {
   const eventId = params.get('id');
 
   if (!isAdmin()) {
-    window.location.hash = '#/not-found';
+    window.location.hash = '#/notFound';
     return;
   }
 

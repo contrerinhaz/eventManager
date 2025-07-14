@@ -185,7 +185,7 @@ a:hover {
 }
 
 /* NOT FOUND */
-#not-found {
+#notFound {
   text-align: center;
   padding: 40px;
   background-color: #ffeef0;
@@ -193,21 +193,21 @@ a:hover {
   margin-top: 50px;
 }
 
-#not-found h2 {
+#notFound h2 {
   color: #e74c3c;
   margin-bottom: 12px;
 }
 
-#not-found p {
+#notFound p {
   color: #666;
   margin-bottom: 16px;
 }
 
-#not-found button {
+#notFound button {
   background-color: #4a90e2;
 }
 
-#not-found button:hover {
+#notFound button:hover {
   background-color: #357ab8;
 }
 
