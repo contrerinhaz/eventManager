@@ -1,4 +1,4 @@
-# 👨‍💻 Author
+# Author
 
 - Full Name: Contreras Coronado Juan David
 - Clan: Caiman
@@ -10,7 +10,7 @@
 
 This is a web-based Event Management System built with HTML, JavaScript, and CSS. It allows users to view, create, register, and manage events through a single-page application (SPA).
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 eventManager/
@@ -26,7 +26,7 @@ eventManager/
 └── README.md               # Project documentation
 ```
 
-## 🚀 Features
+## Features
 
 - View available events
 - Register as a user
@@ -35,7 +35,7 @@ eventManager/
 - Edit or delete events (admin access)
 - Single-page navigation
 
-## 📦 Installation
+## Installation
 
 1. Clone the repository or download the zip:
    ```bash
@@ -54,7 +54,13 @@ eventManager/
    serve .
    ```
 
-## 🧩 Technologies Used
+## How to run
+
+1. npm run dev (start the frontend)
+
+2. npm run backend (start json-server)
+
+## Technologies Used
 
 - HTML5
 - CSS3
