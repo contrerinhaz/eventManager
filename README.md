@@ -4,6 +4,7 @@
 - Clan: Caiman
 - Email: juan2005dakat@gmail.com
 - Number Identification: 1092526878
+- repository: https://github.com/contrerinhaz/eventManager.git
 
 
 # Event Manager
