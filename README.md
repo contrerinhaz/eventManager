@@ -14,15 +14,30 @@ This is a web-based Event Management System built with HTML, JavaScript, and CSS
 ## Project Structure
 
 ```
-eventManager/
-
-public/
-  └── db.json/           # API
-src/
-  ├── js/                # Auth logic with router
-  ├── css/               # Custom styles
-  └── views/             # All SPA views
-index.html               # Main HTML
+juancontreras878/
+├── public/
+│   └── db.json
+├── src/
+│   ├── css/
+│   │   └── styles.css
+│   ├── js/
+│   │   ├── api.js
+│   │   ├── auth.js
+│   │   ├── main.js
+│   │   └── router.js
+│   └── views/
+│       ├── createEvent.js
+│       ├── dashboard.js
+│       ├── editEvent.js
+│       ├── landing.js
+│       ├── login.js
+│       ├── notFound.js
+│       └── register.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── LICENSE
+└── README.md
 ```
 
 ## Features
