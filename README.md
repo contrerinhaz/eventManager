@@ -15,16 +15,14 @@ This is a web-based Event Management System built with HTML, JavaScript, and CSS
 
 ```
 eventManager/
-├── index.html              # Main HTML entry point
-├── package.json            # Project dependencies and metadata
-├── package-lock.json       # Dependency lock file
-├── /views                  # Contains views for each section of the SPA
-├── /controllers            # Functions that control logic between views and models
-├── /models                 # Data models (users, events, roles)
-├── /services               # API communication functions
-├── /router                 # SPA route management
-├── /assets                 # Static files like images and CSS
-└── README.md               # Project documentation
+
+public/
+  └── db.json/           # API
+src/
+  ├── js/                # Auth logic with router
+  ├── css/               # Custom styles
+  └── views/             # All SPA views
+index.html               # Main HTML
 ```
 
 ## Features
